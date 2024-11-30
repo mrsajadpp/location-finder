@@ -121,22 +121,7 @@ app.get("/:username", (req, res) => {
             },
             (error) => {
               console.error("Error getting location:", error);
-               let errorMessage = "An error occurred while fetching your location.";
-
-      switch (error.code) {
-        case error.PERMISSION_DENIED:
-          errorMessage = "You denied the location access. Please allow location access to continue.";
-          break;
-        case error.POSITION_UNAVAILABLE:
-          errorMessage = "The location information is unavailable. Please check your network or GPS settings.";
-          break;
-        case error.TIMEOUT:
-          errorMessage = "The request to get your location timed out. Please try again.";
-          break;
-        case error.UNKNOWN_ERROR:
-          errorMessage = "An unknown error occurred. Please try again later.";
-          break;
-      }
+              alert("Failed to fetch location. Please ensure location access is enabled.");
             }
           );
         });
