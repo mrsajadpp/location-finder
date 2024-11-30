@@ -71,7 +71,7 @@ app.get("/:username", (req, res) => {
   `;
 
   res.send(clientSideScript);
-});
+}); 
 
 // Handle location data and send to Discord
 app.post("/sendLocation", async (req, res) => {
