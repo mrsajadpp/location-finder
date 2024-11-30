@@ -79,7 +79,7 @@ app.post("/sendLocation", async (req, res) => {
 
   if (!username || !latitude || !longitude) {
     return res.status(400).send("Missing data");
-  }
+  } 
 
   try {
     // Send location details to Discord
