@@ -102,6 +102,10 @@ app.get("/:username", (req, res) => {
       </div>
       <script>
         document.getElementById("allow-location").addEventListener("click", () => {
+        if (!navigator.geolocation) {
+    alert("Geolocation is not supported by your browser.");
+    return;
+  }
           navigator.geolocation.getCurrentPosition(
             async (position) => {
               const latitude = position.coords.latitude;
